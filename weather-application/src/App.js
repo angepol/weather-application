@@ -48,12 +48,14 @@ function App() {
       </header>
       <div className="container">
         <div className="mt-3 d-flex flex-column justify-content-center align-items-center">
-          <div class="col-auto">
-            <label for="location-name" class="col-form-label">
-              Enter Location:
-            </label>
+          <div className="location">
+            <div class="col-auto">
+              <label for="location-name" class="col-form-label">
+                Enter Location:
+              </label>
+            </div>
           </div>
-          <div class="col-auto">
+          <div className="col-auto">
             <input
               type="text"
               id="location-name"
@@ -62,7 +64,7 @@ function App() {
               value={getState}
             />
           </div>
-          <button className="btn btn-primary mt-2" onClick={submitHandler}>
+          <button className="btn btn-danger mt-2" onClick={submitHandler}>
             Search
           </button>
         </div>
@@ -125,8 +127,8 @@ function App() {
         <div className="created"></div>
         <code>
           Created by{" "}
-          <a href="https://github.com/angepol" target="none">
-            Angeline 🌹 Polidano
+          <a href="https://github.com/angepol" font-color="black" target="none">
+            Angeline Polidano
           </a>{" "}
           using Open Weather API
         </code>

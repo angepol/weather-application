@@ -44,7 +44,7 @@ function App() {
   return (
     <div className="App">
       <header className="d-flex justify-content-center align-items-center">
-        <h2>Which Weather</h2>
+        <h2 className="title">Which Weather</h2>
       </header>
       <div className="container">
         <div className="mt-3 d-flex flex-column justify-content-center align-items-center">
@@ -122,6 +122,7 @@ function App() {
         </div>
       </div>
       <footer className="footer">
+        <div className="created"></div>
         <code>
           Created by{" "}
           <a href="https://github.com/angepol" target="none">

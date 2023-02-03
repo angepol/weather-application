@@ -39,6 +39,10 @@ function App() {
     return (k - 273.15) * 1.8 + 32;
   };
 
+  const formatTemp = (kelvinToFarenheit) => {
+    return kelvinToFarenheit.toFixed(2);
+  };
+
   console.log(kelvinToFarenheit);
 
   return (
@@ -79,7 +83,7 @@ function App() {
               />
 
               <p className="h2">
-                {kelvinToFarenheit(apiData.main.temp)}&deg; F
+                {formatTemp(kelvinToFarenheit(apiData.main.temp))}&deg; F
               </p>
 
               <p className="h5">
@@ -92,13 +96,15 @@ function App() {
                   <p>
                     <i class="fas fa-temperature-low "></i>{" "}
                     <strong>
-                      {kelvinToFarenheit(apiData.main.temp_min)}&deg; C
+                      {formatTemp(kelvinToFarenheit(apiData.main.temp_min))}
+                      &deg; C
                     </strong>
                   </p>
                   <p>
                     <i className="fas fa-temperature-high"></i>{" "}
                     <strong>
-                      {kelvinToFarenheit(apiData.main.temp_max)}&deg; C
+                      {formatTemp(kelvinToFarenheit(apiData.main.temp_max))}
+                      &deg; C
                     </strong>
                   </p>
                 </div>

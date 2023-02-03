@@ -9,8 +9,8 @@ countries.registerLocale(require("i18n-iso-countries/langs/en.json"));
 function App() {
   // State
   const [apiData, setApiData] = useState({});
-  const [getState, setGetState] = useState("San Fransisco");
-  const [state, setState] = useState("San Fransisco");
+  const [getState, setGetState] = useState("Boston");
+  const [state, setState] = useState("Boston");
 
   // API KEY AND URL
   const apiKey = process.env.REACT_APP_API_KEY;
@@ -31,6 +31,7 @@ function App() {
     setState(getState);
   };
 
+  console.log({ apiData });
   // const formatTemp = (x) => {
   //   x.tofixed(2);
   // };
@@ -42,8 +43,6 @@ function App() {
   const formatTemp = (kelvinToFarenheit) => {
     return kelvinToFarenheit.toFixed(2);
   };
-
-  console.log(kelvinToFarenheit);
 
   return (
     <div className="App">
@@ -97,21 +96,21 @@ function App() {
                     <i class="fas fa-temperature-low "></i>{" "}
                     <strong>
                       {formatTemp(kelvinToFarenheit(apiData.main.temp_min))}
-                      &deg; C
+                      &deg; F
                     </strong>
                   </p>
                   <p>
                     <i className="fas fa-temperature-high"></i>{" "}
                     <strong>
                       {formatTemp(kelvinToFarenheit(apiData.main.temp_max))}
-                      &deg; C
+                      &deg; F
                     </strong>
                   </p>
                 </div>
                 <div className="col-md-6">
                   <p>
                     {" "}
-                    <strong>{apiData.weather[0].main}</strong>
+                    <strong>{apiData.weather[0].description}</strong>
                   </p>
                   <p>
                     <strong>
@@ -129,8 +128,8 @@ function App() {
           )}
         </div>
       </div>
-      <footer className="footer">
-        <div className="created"></div>
+
+      <div className="created">
         <code>
           Created by{" "}
           <a href="https://github.com/angepol" font-color="black" target="none">
@@ -138,7 +137,7 @@ function App() {
           </a>{" "}
           using Open Weather API
         </code>
-      </footer>
+      </div>
     </div>
   );
 }
